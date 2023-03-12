@@ -44,6 +44,16 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+#dropzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+
 #drag-drop-menu {
   position: fixed;
   top: 50%;

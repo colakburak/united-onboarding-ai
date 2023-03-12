@@ -56,3 +56,27 @@ document.addEventListener('drop', e => {
     dropTarget.innerHTML += e.dataTransfer.getData('text/plain');
   }
 });
+
+const draggableElement = document.getElementById("menu-item-1");
+const dropzone = document.getElementById("dropzone");
+
+// Event listener for when the draggable element is being dragged
+draggableElement.addEventListener("dragstart", (event) => {
+  // Set the data that will be transferred to the dropzone
+  event.dataTransfer.setData("text/plain", draggableElement.id);
+});
+
+// Event listener for when the draggable element is dropped onto the dropzone
+dropzone.addEventListener("drop", (event) => {
+  event.preventDefault();
+  // Get the data from the draggable element
+  const data = event.dataTransfer.getData("text/plain");
+  const draggableElement = document.getElementById(data);
+  // Add the draggable element to the dropzone
+  dropzone.appendChild(draggableElement);
+});
+
+// Prevent default behavior for the dropzone element
+dropzone.addEventListener("dragover", (event) => {
+  event.preventDefault();
+});
