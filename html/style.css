@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    cursor: move;
+  }
+  
+  .flow {
+    width: 50%;
+    min-height: 200px;
+    padding: 20px;
+    border: 2px dashed #ccc;
+  }
+  
+  .step {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .objects {
+    margin-top: 10px;
+  }
+  
+  .object {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .delete {
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
