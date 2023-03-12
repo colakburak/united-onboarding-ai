@@ -15,3 +15,7 @@ We used:
 4. Open the UI
 5. Enjoy!
 
+### Here is the pictures of the AI's output results based on the Mock Data side by side:
+
+![Feature Importance](./output.png)
+![Prediction](./output2.png)
