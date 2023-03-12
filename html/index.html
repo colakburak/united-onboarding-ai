@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Onboarding Menu</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Onboarding Menu</h1>
-    <button id="menu-toggle">Toggle Menu</button>
-    <div class="container">
-      <div class="menu hidden">
-        <div class="item" draggable="true">Welcome Message</div>
-        <div class="item" draggable="true">Company Overview</div>
-        <div class="item" draggable="true">Company Culture</div>
-        <div class="item" draggable="true">Benefits</div>
-        <div class="item" draggable="true">Training &amp; Development</div>
-      </div>
-      <div class="flow">
-        <div class="step">Step 1: Welcome Message</div>
-        <div class="objects"></div>
-        <div class="step">Step 2: Company Overview</div>
-        <div class="objects"></div>
-        <div class="step">Step 3: Company Culture</div>
-        <div class="objects"></div>
-
-      </div>
+<head>
+	<title>United Onboarding Flow Creator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>United Onboarding Flow Creator</h1>
+		<p>Create a seamless onboarding experience for your users</p>
+	</header>
+	
+		<!-- Your content goes here -->
+  <main>
+    <div id="drag-drop-menu">
+      <h3>ToolBox</h3>
+      <ul>
+          <li>
+              <div id="menu-item-1" class="menu-item" draggable="true">
+                  <img src="image-1.png" width="200" height="150">
+                  <p>Item 1</p>
+                </div>
+          </li>
+          <li>
+              <div id="menu-item-2" class="menu-item" draggable="true">
+                  <img src="image-2.png" width="200" height="150">
+                  <p>Item 2</p>
+                </div>
+                
+          </li>
+          
+      </ul>
+      <ul>
+          <li>
+              <div id="menu-item-3" class="menu-item" draggable="true">
+                  <img src="image-3.png" width="200" height="150">
+                  <p>Item 3</p>
+                </div>
+          </li>
+          <li>
+              <div id="menu-item-4" class="menu-item" draggable="true">
+                  <img src="image-4.png" width="200" height="150">
+                  <p>Item 4</p>
+                </div>
+          </li>
+      </ul>    
     </div>
-    <script src="script.js"></script>
-  </body>
+    
+    <div id="drop-zone"></div>
+  </main>
+</body>
 </html>

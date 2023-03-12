@@ -1,84 +1,29 @@
-const items = document.querySelectorAll('.item');
-const flow = document.querySelector('.flow');
-const objects = document.querySelector('.objects');
-const menu = document.querySelector('.menu');
-const menuToggle = document.querySelector('#menu-toggle');
+const menuItems = document.querySelectorAll('.menu-item');
+const dropZone = document.getElementById('drop-zone');
 
-let dragItem = null;
+menuItems.forEach(item => {
+  item.addEventListener('dragstart', dragStart);
+});
 
-for (let i = 0; i < items.length; i++) {
-  const item = items[i];
+dropZone.addEventListener('dragover', dragOver);
+dropZone.addEventListener('drop', drop);
 
-  item.addEventListener('dragstart', function () {
-    dragItem = item;
-    setTimeout(() => {
-      item.style.display = 'none';
-    }, 0);
-  });
-
-  item.addEventListener('dragend', function () {
-    setTimeout(() => {
-      dragItem.style.display = 'block';
-      dragItem = null;
-    }, 0);
-  });
+function dragStart(event) {
+  event.dataTransfer.setData('text/plain', event.target.id);
+  event.currentTarget.classList.add('dragging');
 }
 
-flow.addEventListener('dragover', function (e) {
-  e.preventDefault();
-});
-
-flow.addEventListener('dragenter', function (e) {
-  e.preventDefault();
-  this.style.borderStyle = 'solid';
-});
-
-flow.addEventListener('dragleave', function () {
-  this.style.borderStyle = 'dashed';
-});
-
-flow.addEventListener('drop', function () {
-  this.style.borderStyle = 'dashed';
-  const object = document.createElement('div');
-  object.textContent = dragItem.textContent;
-  objects.appendChild(object);
-});
-
-menuToggle.addEventListener('click', function () {
-  menu.classList.toggle('hidden');
-});
-
-for (let i = 0; i < items.length; i++) {
-  const item = items[i];
-
-  item.addEventListener('dragstart', function () {
-    dragItem = item;
-    setTimeout(() => {
-      item.style.display = 'none';
-    }, 0);
-  });
-
-  item.addEventListener('dragend', function () {
-    setTimeout(() => {
-      dragItem.style.display = 'block';
-      dragItem = null;
-    }, 0);
-  });
+function dragOver(event) {
+  event.preventDefault();
 }
 
-flow.addEventListener('dragover', function (e) {
-  e.preventDefault();
-});
-
-flow.addEventListener('dragenter', function (e) {
-  e.preventDefault();
-  this.style.borderStyle = 'solid';
-});
-
-flow.addEventListener('dragleave', function () {
-  this.style.borderStyle = 'dashed';
-});
-
-flow.addEventListener('drop', function () {
-  this.style.borderStyle = 'dashed';
-});
+function drop(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData('text/plain');
+  const droppedElement = document.getElementById(data);
+  const clone = droppedElement.cloneNode(true);
+  const text = document.createTextNode('Dropped!');
+  clone.appendChild(text);
+  dropZone.appendChild(clone);
+  droppedElement.classList.remove('dragging');
+      }

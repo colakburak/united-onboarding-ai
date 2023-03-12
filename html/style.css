@@ -1,54 +1,105 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .menu {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .item {
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-    cursor: move;
-  }
-  
-  .flow {
-    width: 50%;
-    min-height: 200px;
-    padding: 20px;
-    border: 2px dashed #ccc;
-  }
-  
-  .step {
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .objects {
-    margin-top: 10px;
-  }
-  
-  .object {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .delete {
-    font-weight: bold;
-    color: red;
-    cursor: pointer;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
+
+header {
+  background-color: rgba(69, 161, 104, 0.582);
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.411);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+#drop-zone {
+  border: 1px solid black;
+  height: 200px;
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#drop-zone > div {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+}
+
+
+#drag-drop-menu {
+  float: left;
+}
+
+#drag-drop-menu {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#drag-drop-menu h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#drag-drop-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+#drag-drop-menu li {
+  width: calc(33.33% - 10px);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+  max-width: calc(33.33% - 10px);
+}
+
+#drag-drop-menu li img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#drag-drop-menu li a {
+  display: block;
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+#drag-drop-menu li a:hover {
+  background-color: #333;
+  color: #fff;
+}
